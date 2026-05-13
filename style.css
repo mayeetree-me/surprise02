@@ -375,7 +375,54 @@ body {
 }
 
 /* ═══════════════════════════════════════
-   STAGE 5 — PROPOSAL / GIFT
+   STAGE 5 — ASK HER OUT
+   ═══════════════════════════════════════ */
+#stage-ask-out {
+  background: radial-gradient(ellipse at center, #1a0818 0%, #0a0508 70%);
+}
+
+.ask-out-content {
+  text-align: center; z-index: 5;
+  max-width: 600px; padding: 20px;
+}
+
+.ask-out-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--pink), var(--gold-light), var(--pink));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 25px;
+  animation: fadeInUp 1s ease 0.3s both;
+}
+
+.ask-out-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.8; color: rgba(255, 245, 245, 0.9);
+  margin-bottom: 40px;
+  animation: fadeInUp 1s ease 0.6s both;
+}
+
+.btn-date-yes {
+  padding: 18px 60px;
+  background: linear-gradient(135deg, var(--pink), #ff3d7f);
+  color: white; border: none; border-radius: 60px;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.5rem); font-weight: 600;
+  cursor: pointer; letter-spacing: 1px;
+  box-shadow: 0 10px 40px rgba(255, 107, 157, 0.5);
+  transition: var(--transition-smooth);
+  animation: fadeInUp 1s ease 0.9s both, pulseBtn 2s ease-in-out infinite 1.5s;
+}
+.btn-date-yes:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 15px 50px rgba(255, 107, 157, 0.7);
+}
+
+/* ═══════════════════════════════════════
+   STAGE 6 — PROPOSAL / GIFT
    ═══════════════════════════════════════ */
 #stage-proposal {
   background: radial-gradient(ellipse at center, #1a1005 0%, #0a0804 50%, #050302 100%);
