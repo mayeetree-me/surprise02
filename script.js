@@ -4,7 +4,7 @@
 
 const App = {
   currentStage: 0,
-  stages: ['stage-envelope', 'stage-letter', 'stage-question', 'stage-celebration', 'stage-proposal'],
+  stages: ['stage-envelope', 'stage-letter', 'stage-question', 'stage-celebration', 'stage-ask-out', 'stage-proposal'],
   canvas: null,
   ctx: null,
   particles: [],
@@ -43,7 +43,7 @@ const App = {
     // Trigger stage-specific logic
     if (index === 1) this.startLetter();
     if (index === 3) this.startCelebration();
-    if (index === 4) this.startProposal();
+    if (index === 5) this.startProposal();
   },
 
   transitionTo(index) {
@@ -126,7 +126,12 @@ const App = {
       this.transitionTo(4);
     });
 
-    // Stage 5: Final Button
+    // Stage 5: Ask Out Yes
+    document.querySelector('#btn-date-yes').addEventListener('click', () => {
+      this.transitionTo(5);
+    });
+
+    // Stage 6: Final Button
     document.querySelector('.btn-final').addEventListener('click', () => {
       this.confettiActive = true;
       this.launchConfetti();
