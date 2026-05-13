@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 A Special Surprise For You</title>
+  <meta name="description" content="A heartfelt surprise just for you">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💖</text></svg>">
+</head>
+<body>
+
+  <!-- Background Particle Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Music Toggle -->
+  <button class="music-toggle" id="music-toggle" aria-label="Toggle music">🔇</button>
+
+  <!-- Background Music (royalty-free gentle piano) -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="https://cdn.pixabay.com/audio/2024/11/29/audio_d4e27893c8.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ═══════════════════════════════════════
+       STAGE 1 — THE ENVELOPE
+       ═══════════════════════════════════════ -->
+  <section class="stage active" id="stage-envelope">
+    <p class="envelope-hint">I have something special for you...</p>
+    <div class="envelope-container">
+      <div class="envelope-glow"></div>
+      <img src="envelope.png" alt="Love Letter" class="envelope-img">
+    </div>
+    <p class="tap-text">Tap to open 💌</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       STAGE 2 — THE LOVE LETTER
+       ═══════════════════════════════════════ -->
+  <section class="stage" id="stage-letter">
+    <div class="letter-container">
+      <p class="letter-date">A letter from my heart</p>
+      <h2 class="letter-greeting">My Dearest Love,</h2>
+      <div class="letter-body">
+        <span class="line">From the moment you walked into my life,</span>
+        <span class="line">everything changed for the better. 💫</span>
+        <span class="line">&nbsp;</span>
+        <span class="line">Your smile lights up my darkest days,</span>
+        <span class="line">your laugh is my favorite melody,</span>
+        <span class="line">and your love is the greatest gift</span>
+        <span class="line">I have ever received. 💕</span>
+        <span class="line">&nbsp;</span>
+        <span class="line">Every moment with you feels like magic,</span>
+        <span class="line">and I want to spend forever</span>
+        <span class="line">making you feel as special</span>
+        <span class="line">as you make me feel every single day. ✨</span>
+        <span class="line">&nbsp;</span>
+        <span class="line">But first... I have a little question for you...</span>
+      </div>
+      <p class="letter-sign">Forever yours, with all my love 💖</p>
+      <button class="letter-continue-btn" id="letter-continue">Continue →</button>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       STAGE 3 — DO YOU LOVE ME?
+       ═══════════════════════════════════════ -->
+  <section class="stage" id="stage-question">
+    <div class="question-wrapper">
+      <span class="question-emoji">💕</span>
+      <h1 class="question-text">Do You Love Me?</h1>
+      <div class="question-buttons">
+        <button class="btn-yes" id="btn-yes">Yes, I Do! 💖</button>
+        <button class="btn-no" id="btn-no">No 😅</button>
+      </div>
+      <p class="no-message" id="no-message"></p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       STAGE 4 — CELEBRATION
+       ═══════════════════════════════════════ -->
+  <section class="stage" id="stage-celebration">
+    <div class="celebration-content">
+      <span class="celebration-emoji">🎉</span>
+      <h2 class="celebration-text">I Knew It!</h2>
+      <p class="celebration-sub">You just made me the happiest person alive 🥰</p>
+      <img src="couple.jpeg" alt="Us Together" class="couple-img">
+      <div class="memory-gallery">
+        <div class="polaroid" style="--rot: -4deg; animation-delay: 1.5s">
+          <img src="mypic02.jpeg" alt="Memory">
+          <p class="caption">Our Story 💌</p>
+        </div>
+        <div class="polaroid" style="--rot: 3deg; animation-delay: 2s">
+          <img src="mypic01.jpeg" alt="Memory">
+          <p class="caption">Together 💕</p>
+        </div>
+        <div class="polaroid" style="--rot: -2deg; animation-delay: 2.5s">
+          <img src="mypic03.jpeg" alt="Memory">
+          <p class="caption">Surprise! 🎁</p>
+        </div>
+      </div>
+      <button class="btn-one-more" id="btn-one-more">One more thing... ✨</button>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       STAGE 5 — ASK HER OUT
+       ═══════════════════════════════════════ -->
+  <section class="stage" id="stage-ask-out">
+    <div class="ask-out-content">
+      <h2 class="ask-out-title">Let's Go On A Date! 🌹</h2>
+      <p class="ask-out-text">I would love to take you out and treat you like the queen you are. Are you free this weekend?</p>
+      <button class="btn-date-yes" id="btn-date-yes">Yes, I'd love to! 🥰</button>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       STAGE 6 — PROPOSAL / GIFT REVEAL
+       ═══════════════════════════════════════ -->
+  <section class="stage" id="stage-proposal">
+    <div class="proposal-content">
+      <img src="gift.png" alt="Gift" class="gift-img">
+      <h2 class="proposal-title">Will You Be Mine Forever? 💍</h2>
+      <p class="proposal-message">
+        You are my today, my tomorrow, and my forever.
+        Every love story is beautiful, but ours is my favorite.
+        I promise to love you, cherish you, and be your best friend
+        for as long as the stars shine in the sky. ✨
+        <br><br>
+        I love you more than words could ever express.
+        You are my everything. 💖
+      </p>
+      <p class="proposal-names">You & Me — Forever 💕</p>
+      <p class="proposal-date">Made with love ✦ 2026</p>
+      <p class="proposal-forever">Forever & Always 💍✨</p>
+      <button class="btn-final" id="btn-final">I Love You Too 💖</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
